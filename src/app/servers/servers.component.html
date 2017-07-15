@@ -1,3 +1,14 @@
-<p>
-  servers works!
+<!-- despite allowNewServer being a string, it references the typescript property, which is a boolean  -->
+<!-- click below uses generic html onClick handler and calls custom method -->
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
+<p [innerText]="allowNewServer">
+  {{ serverCreationStatus }}
 </p>
+<app-server></app-server>
+<!-- square brackets indicate to angular that we want to dynamically bind some property  -->
