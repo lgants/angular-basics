@@ -1,7 +1,7 @@
 <!-- despite allowNewServer being a string, it references the typescript property, which is a boolean  -->
 <!-- click below uses generic html onclick handler and calls custom method -->
 <!-- $ is a reserved variable new used for event binding -->
-<label for=""></label>
+<label for="">Server Name</label>
 <!-- <input
   type="text"
   class="form-control"
@@ -11,15 +11,21 @@
   type="text"
   class="form-control"
   [(ngModel)]="serverName">
-<p>{{ serverName }}</p>
+<!-- <p>{{ serverName }}</p> -->
 <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
   (click)="onCreateServer()">
   Add Server
 </button>
-<p [innerText]="allowNewServer">
-  {{ serverCreationStatus }}
-</p>
+<!-- <p [innerText]="allowNewServer">{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated">Server was created! Server name is {{ serverName }}.</p>
+<!-- <p [innerText]="allowNewServer">{{ serverCreationStatus }}</p> -->
+<!-- ngIf can also be used with an else statement -->
+<!-- <p *ngIf="serverCreated; else noServer">Server was created! Server name is {{ serverName }}.</p> -->
+<!-- the marker is referenced in the else condition above -->
+<!-- <ng-template #noServer>
+  <p>No server was created.</p>
+</ng-template> -->
 <app-server></app-server>
 <!-- square brackets indicate to angular that we want to dynamically bind some property  -->
