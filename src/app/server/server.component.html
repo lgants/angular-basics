@@ -1,2 +1,8 @@
 <!-- the only condition for string interpolation syntax is that it must an expression that evaluates to a string -->
-<p>Server with ID: {{ serverId }} is {{ getServerStatus() }} </p>
+<!-- square brackets around ngStyle indicate binding to propery of a directive -->
+<p
+  [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="{online: serverStatus === 'online'}"
+  >
+  Server with ID: {{ serverId }} is {{ getServerStatus() }}
+</p>

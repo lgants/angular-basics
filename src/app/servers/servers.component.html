@@ -27,5 +27,6 @@
 <!-- <ng-template #noServer>
   <p>No server was created.</p>
 </ng-template> -->
-<app-server></app-server>
+<!-- dynamically loads servers with a loop -->
+<app-server *ngFor="let server of servers"></app-server>
 <!-- square brackets indicate to angular that we want to dynamically bind some property  -->
