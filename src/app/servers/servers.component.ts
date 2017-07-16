@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = "No server was created!";
+  serverName = "";
 
   constructor() {
     setTimeout(() => {
@@ -20,6 +21,11 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreationStatus = "Server was created!";
+  }
+
+  // need to specify that that the type of this will be an HTML input element for TypeScript
+  onUpdateServerName(event: any) {
+    this.serverName = (<HTMLInputElement>event.target).value
   }
 
 }

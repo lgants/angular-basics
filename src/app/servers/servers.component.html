@@ -1,10 +1,21 @@
 <!-- despite allowNewServer being a string, it references the typescript property, which is a boolean  -->
-<!-- click below uses generic html onClick handler and calls custom method -->
+<!-- click below uses generic html onclick handler and calls custom method -->
+<!-- $ is a reserved variable new used for event binding -->
+<label for=""></label>
+<!-- <input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)"
+  > -->
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName">
+<p>{{ serverName }}</p>
 <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
-  (click)="onCreateServer()"
->
+  (click)="onCreateServer()">
   Add Server
 </button>
 <p [innerText]="allowNewServer">
